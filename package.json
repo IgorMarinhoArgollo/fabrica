@@ -1,0 +1,16 @@
+{
+  "name": "fabrica",
+  "version": "1.0.0",
+  "description": "Desafio Técnico da Fábrica de Startup",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Igor Marinho Argollo - igormarinhoargollo@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "typescript": "^5.0.3"
+  }
+}
