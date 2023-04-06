@@ -4,13 +4,16 @@
   "description": "Desafio Técnico da Fábrica de Startup",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts"
   },
   "keywords": [],
   "author": "Igor Marinho Argollo - igormarinhoargollo@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^18.15.11",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
     "typescript": "^5.0.3"
   }
 }
