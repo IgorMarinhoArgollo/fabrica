@@ -1,5 +1,4 @@
 import { model, Schema } from "mongoose";
-import { CategorySchema } from './CategoryModel';
 
 const ProductSchema = new Schema({
   name: {
@@ -15,7 +14,7 @@ const ProductSchema = new Schema({
     require: true,
   },
   category: {
-    type: [CategorySchema],
+    type: [String],
     default: [],
   }
 

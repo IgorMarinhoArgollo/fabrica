@@ -14,7 +14,7 @@ const ProductZodSchema = z.object({
     required_error: 'name is required',
     invalid_type_error: 'name must be a number',
   }),
-  category: z.array(CategoryZodSchema).optional(),
+  category: z.array(z.string()).optional().default([]),
 });
 
 type IProduct = z.infer<typeof ProductZodSchema>;
