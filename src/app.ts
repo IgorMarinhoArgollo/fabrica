@@ -4,15 +4,21 @@ import limiter from './middlewares/limiter';
 import helmet from 'helmet';
 import * as morgan from 'morgan';
 
+import login from './routers/auth';
+import category from './routers/category';
+import product from './routers/product';
+
 
 const app = express();
 
 app.use(helmet());
-app.use(express.json());
 app.use(limiter);
+app.use(express.json());
 app.use(morgan('common'));
 
-app.get('/', (req, res) => res.json({ ok: true }));
+app.use('/auth', login);
+app.use('/category', category);
+app.use('/product', product);
 
 app.use(errorMiddleware);
 
