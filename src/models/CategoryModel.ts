@@ -5,6 +5,6 @@ export const CategorySchema = new Schema({
     type: String,
     require: true,
   },
-});
+}, { versionKey: false });
 
 export default model("Category", CategorySchema);

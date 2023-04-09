@@ -2,7 +2,7 @@ import tokenGenerator from "../helpers/tokenGenerator";
 import { compare } from "../helpers/encrypt-compare";
 import UserModel from "../models/UserModel";
 
-const login = async (email: string, password: string) => {
+const loginService = async (email: string, password: string) => {
   if (!email || !password) {
     return { code: 400, message: 'Invalid Field' };
   }
@@ -14,4 +14,4 @@ const login = async (email: string, password: string) => {
   return { code: 401, message: 'Unauthorized' };
 };
 
-export default login;
+export default loginService;

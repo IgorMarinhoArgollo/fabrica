@@ -17,7 +17,6 @@ const ProductSchema = new Schema({
     type: [String],
     default: [],
   }
-
-});
+}, { versionKey: false });
 
 export default model("Product", ProductSchema);
