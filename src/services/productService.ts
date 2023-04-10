@@ -60,3 +60,37 @@ export const createService = async (newProduct: any) => {
   await ProductModel.create(product);
   return { code: 201, message: 'Product created successfully' };
 };
+
+export const updateService = async (newProduct: any, _id: string) => {
+  const validationError = validateProductFields(newProduct);
+  if (validationError) {
+    return validationError;
+  }
+
+  const { name, quantity, price, category } = newProduct;
+
+  const isValidCategory = await validateCategories(category);
+  if (isValidCategory !== true) {
+    return isValidCategory;
+  }
+
+  const product = { name, quantity, price, category };
+
+  const updatedProduct = await ProductModel.findOneAndUpdate({ _id }, product, {
+    new: true,
+  });
+
+  if (!updatedProduct) {
+    return { code: 404, message: 'Product not found' };
+  }
+
+  return { code: 200, message: 'Product updated successfully' };
+};
+
+export const deleteService = async (_id: string) => {
+  const result = await ProductModel.deleteOne({ _id });
+  if (result.deletedCount === 0) {
+    return { code: 404, message: 'Product not found' };
+  }
+  return { code: 200, message: 'Product deleted successfully' };
+}
