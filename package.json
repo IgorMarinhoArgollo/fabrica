@@ -40,7 +40,6 @@
     "mongodb": "^5.2.0",
     "mongoose": "^7.0.3",
     "morgan": "^1.10.0",
-    "swagger-ui-express": "^4.6.2",
-    "zod": "^3.21.4"
+    "swagger-ui-express": "^4.6.2"
   }
 }
