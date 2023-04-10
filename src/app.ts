@@ -4,9 +4,9 @@ import limiter from './middlewares/limiter';
 import helmet from 'helmet';
 import * as morgan from 'morgan';
 
-import login from './routers/login';
-import category from './routers/category';
-import product from './routers/product';
+import loginRouter from './routers/loginRouter';
+import categoryRouter from './routers/categoryRouter';
+import productRouter from './routers/productRouter';
 import authMiddleware from './middlewares/authMiddleware';
 
 
@@ -17,9 +17,9 @@ app.use(limiter);
 app.use(express.json());
 app.use(morgan('common'));
 
-app.use('/auth', login);
-app.use('/category', authMiddleware, category);
-app.use('/product', authMiddleware, product);
+app.use('/auth', loginRouter);
+app.use('/category', authMiddleware, categoryRouter);
+app.use('/product', authMiddleware, productRouter);
 
 app.use(errorMiddleware);
 
